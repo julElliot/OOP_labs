@@ -7,3 +7,12 @@ D:\Универ\4 семестр\ООП\Labs\1-st lab\ClassHierarchy\ClassHierar
 D:\Универ\4 семестр\ООП\Labs\1-st lab\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.pdb
 D:\Универ\4 семестр\ООП\Labs\1-st lab\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.CRUD.resources
 D:\Универ\4 семестр\ООП\Labs\1-st lab\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.csproj.GenerateResource.cache
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\bin\Debug\ClassHierarchy.exe.config
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\bin\Debug\ClassHierarchy.exe
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\bin\Debug\ClassHierarchy.pdb
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.csprojAssemblyReference.cache
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.CRUD.resources
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.csproj.GenerateResource.cache
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.csproj.CoreCompileInputs.cache
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.exe
+D:\Универ\4 семестр\ООП\OOP_labs\ClassHierarchy\ClassHierarchy\obj\Debug\ClassHierarchy.pdb

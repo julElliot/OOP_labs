@@ -52,7 +52,9 @@ namespace ClassHierarchy
                 if (Issues[i].Category.Originality)
                     originality = "Оригинал";
                 else originality = "Переведено";
-                dataGridView.Rows.Add(Issues[i].Name, periodicity, Issues[i].Edition, $"{Issues[i].Category.NatureOfInfo}; {originality}; {Issues[i].Category.TargetAudience}");
+                dataGridView.Rows.Add(Issues[i].Name, periodicity, 
+                    Issues[i].Edition, $"{Issues[i].Category.NatureOfInfo}; " +
+                    $"{originality}; {Issues[i].Category.TargetAudience}");
             }        
         }
 
@@ -129,7 +131,10 @@ namespace ClassHierarchy
         {
             try
             {
-                if (MessageBox.Show("Вы действительно хотите удалить издание " + dataGridView.Rows[dataGridView.SelectedCells[0].RowIndex].Cells[0].Value + "?", "Удаление издания", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Вы действительно хотите удалить издание " + 
+                    dataGridView.Rows[dataGridView.SelectedCells[0].RowIndex].Cells[0].Value 
+                    + "?", "Удаление издания", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) 
+                    == DialogResult.Yes)
                 {
                     Issues.RemoveAt(dataGridView.SelectedCells[0].RowIndex);
                     MessageBox.Show("Издание успешно удалено!");
@@ -146,7 +151,8 @@ namespace ClassHierarchy
 
         private bool inputtedValues()
         {
-            if (textBoxName.Text == "" || textBoxEdition.Text == "" || textBoxNature.Text == "" || textBoxAudience.Text == "")
+            if (textBoxName.Text == "" || textBoxEdition.Text == "" 
+                || textBoxNature.Text == "" || textBoxAudience.Text == "")
                 return false;
             else
                 return true;
@@ -157,15 +163,18 @@ namespace ClassHierarchy
             string thirdParam, bool isIllustr, bool isCatalog)
         {
             if (issueType.Equals("Книга"))
-                return new Book(category, name, edition, periodicity, firstParam, secondParam, isIllustr);
+                return new Book(category, name, edition, periodicity, 
+                    firstParam, secondParam, isIllustr);
             else if (issueType.Equals("Не уточнено"))
                 return new Issue(category, name, edition, periodicity);
             else if (issueType.Equals("Журнал"))
-                return new Journal(category, name, edition, periodicity, Convert.ToInt16(firstParam), secondParam, thirdParam);
+                return new Journal(category, name, edition, periodicity,
+                    Convert.ToInt16(firstParam), secondParam, thirdParam);
             else if (issueType.Equals("Мини-издание"))
                 return new Mini_Issue(category, name, edition, periodicity, firstParam);
             else if (issueType.Equals("Брошюра"))
-                return new Brochure(category, name, edition, periodicity, firstParam, secondParam, isIllustr, isCatalog);
+                return new Brochure(category, name, edition, periodicity,
+                    firstParam, secondParam, isIllustr, isCatalog);
             else
                 throw new Exception(issueType + " не существует в списке изданий!");
         } 
@@ -175,17 +184,9 @@ namespace ClassHierarchy
             if (inputtedValues())
             {
                 Category currCategory;
-                currCategory = new Category(textBoxNature.Text, textBoxAudience.Text, checkBoxOriginality.Checked);
+                currCategory = new Category(textBoxNature.Text, textBoxAudience.Text,
+                    checkBoxOriginality.Checked);
                 
-                int firstParam;
-                try
-                {
-                    firstParam = Convert.ToInt32(textBox1.Text);
-                }
-                catch
-                {
-                    firstParam = 0;
-                }
                 Issue issue = getIssueType(comboBoxType.Text.ToString(), textBoxName.Text, 
                     Convert.ToInt16(textBoxEdition.Text), checkBoxPeriodicity.Checked, currCategory,
                     textBox1.Text, textBox2.Text, textBox3.Text, checkBoxIllustr.Checked,
@@ -207,7 +208,8 @@ namespace ClassHierarchy
 
         private void textBoxEdition_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) == true || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete)
+            if (Char.IsDigit(e.KeyChar) == true ||
+                e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete)
                 return;
             e.Handled = true;
             return;
@@ -215,60 +217,60 @@ namespace ClassHierarchy
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            
-                if (inputtedValues())
-                {
-                    Issues[dataGridView.SelectedCells[0].RowIndex].Name = textBoxName.Text;
-                    Issues[dataGridView.SelectedCells[0].RowIndex].Edition = Convert.ToInt16(textBoxEdition.Text);
-                    Issues[dataGridView.SelectedCells[0].RowIndex].Periodicity = checkBoxPeriodicity.Checked;
-                    Issues[dataGridView.SelectedCells[0].RowIndex].Category.NatureOfInfo = textBoxNature.Text;
-                    Issues[dataGridView.SelectedCells[0].RowIndex].Category.Originality = checkBoxOriginality.Checked;
-                    Issues[dataGridView.SelectedCells[0].RowIndex].Category.TargetAudience = textBoxAudience.Text;
 
-                    comboBoxType.SelectedIndex = 0;
-                    if (Issues[dataGridView.SelectedCells[0].RowIndex] is Book)
-                    {
-                        comboBoxType.SelectedIndex = 1;
-                        Book curr = Issues[dataGridView.SelectedCells[0].RowIndex] as Book;
-                        curr.Author = textBox1.Text;
-                        curr.Binding = textBox2.Text;
-                        curr.IllustratedBookend = checkBoxIllustr.Checked;
-                        Issues[dataGridView.SelectedCells[0].RowIndex] = curr;
-                    }
-                    else if (Issues[dataGridView.SelectedCells[0].RowIndex] is Journal)
-                    {
-                        comboBoxType.SelectedIndex = 2;
-                        Journal curr = Issues[dataGridView.SelectedCells[0].RowIndex] as Journal;
-                        curr.SerialNumber = Convert.ToInt16(textBox1.Text);
-                        curr.Topic = textBox2.Text;
-                        curr.Redactors = textBox3.Text;
-                        Issues[dataGridView.SelectedCells[0].RowIndex] = curr;
-                    }
-                    else if (Issues[dataGridView.SelectedCells[0].RowIndex] is Mini_Issue)
-                    {
-                        comboBoxType.SelectedIndex = 3;
-                        Mini_Issue curr = Issues[dataGridView.SelectedCells[0].RowIndex] as Mini_Issue;
-                        curr.Kind = textBox1.Text;
-                        Issues[dataGridView.SelectedCells[0].RowIndex] = curr;
-                    }
-                    else if (Issues[dataGridView.SelectedCells[0].RowIndex] is Brochure)
-                    {
-                        comboBoxType.SelectedIndex = 4;
-                        Brochure curr = Issues[dataGridView.SelectedCells[0].RowIndex] as Brochure;
-                        curr.Author = textBox1.Text;
-                        curr.Binding = textBox2.Text;
-                        curr.IllustratedBookend = checkBoxIllustr.Checked;
-                        curr.IsCatalog = checkBoxCatalog.Checked;
-                        Issues[dataGridView.SelectedCells[0].RowIndex] = curr;
-                    }
-                    dataGridAndAllListsUpdate();
-                    ClearTextBoxes();
-                }
-                else
+            if (inputtedValues())
+            {
+                Issues[dataGridView.SelectedCells[0].RowIndex].Name = textBoxName.Text;
+                Issues[dataGridView.SelectedCells[0].RowIndex].Edition = Convert.ToInt16(textBoxEdition.Text);
+                Issues[dataGridView.SelectedCells[0].RowIndex].Periodicity = checkBoxPeriodicity.Checked;
+                Issues[dataGridView.SelectedCells[0].RowIndex].Category.NatureOfInfo = textBoxNature.Text;
+                Issues[dataGridView.SelectedCells[0].RowIndex].Category.Originality = checkBoxOriginality.Checked;
+                Issues[dataGridView.SelectedCells[0].RowIndex].Category.TargetAudience = textBoxAudience.Text;
+
+                comboBoxType.SelectedIndex = 0;
+                if (Issues[dataGridView.SelectedCells[0].RowIndex] is Book)
                 {
-                    MessageBox.Show("Заполните все поля!");
+                    comboBoxType.SelectedIndex = 1;
+                    Book curr = Issues[dataGridView.SelectedCells[0].RowIndex] as Book;
+                    curr.Author = textBox1.Text;
+                    curr.Binding = textBox2.Text;
+                    curr.IllustratedBookend = checkBoxIllustr.Checked;
+                    Issues[dataGridView.SelectedCells[0].RowIndex] = curr;
                 }
-           
+                else if (Issues[dataGridView.SelectedCells[0].RowIndex] is Journal)
+                {
+                    comboBoxType.SelectedIndex = 2;
+                    Journal curr = Issues[dataGridView.SelectedCells[0].RowIndex] as Journal;
+                    curr.SerialNumber = Convert.ToInt16(textBox1.Text);
+                    curr.Topic = textBox2.Text;
+                    curr.Redactors = textBox3.Text;
+                    Issues[dataGridView.SelectedCells[0].RowIndex] = curr;
+                }
+                else if (Issues[dataGridView.SelectedCells[0].RowIndex] is Mini_Issue)
+                {
+                    comboBoxType.SelectedIndex = 3;
+                    Mini_Issue curr = Issues[dataGridView.SelectedCells[0].RowIndex] as Mini_Issue;
+                    curr.Kind = textBox1.Text;
+                    Issues[dataGridView.SelectedCells[0].RowIndex] = curr;
+                }
+                else if (Issues[dataGridView.SelectedCells[0].RowIndex] is Brochure)
+                {
+                    comboBoxType.SelectedIndex = 4;
+                    Brochure curr = Issues[dataGridView.SelectedCells[0].RowIndex] as Brochure;
+                    curr.Author = textBox1.Text;
+                    curr.Binding = textBox2.Text;
+                    curr.IllustratedBookend = checkBoxIllustr.Checked;
+                    curr.IsCatalog = checkBoxCatalog.Checked;
+                    Issues[dataGridView.SelectedCells[0].RowIndex] = curr;
+                }
+                dataGridAndAllListsUpdate();
+                ClearTextBoxes();
+            }
+            else
+            {
+                MessageBox.Show("Заполните все поля!");
+            }
+
         }
 
         private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -284,7 +286,7 @@ namespace ClassHierarchy
                 else
                     listBoxInfo.Items.Add("Не периодично");
                 listBoxInfo.Items.Add($"Категория: { Issues[dataGridView.SelectedCells[0].RowIndex].Category.NatureOfInfo}");
-                listBoxInfo.Items.Add($"{ Issues[dataGridView.SelectedCells[0].RowIndex].Category.TargetAudience}");
+                listBoxInfo.Items.Add($"Цел. аудитория:{ Issues[dataGridView.SelectedCells[0].RowIndex].Category.TargetAudience}");
                 if (Issues[dataGridView.SelectedCells[0].RowIndex].Category.Originality)
                     listBoxInfo.Items.Add("Оригинальное");
                 else
