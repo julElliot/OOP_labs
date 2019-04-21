@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ArrayOfIssue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Issue>
+    <Category>
+      <NatureOfInfo>jhgtf</NatureOfInfo>
+      <TargetAudience>nbvc</TargetAudience>
+      <Originality>false</Originality>
+    </Category>
+    <Name>kjmnhbg</Name>
+    <Edition>6543</Edition>
+    <Periodicity>false</Periodicity>
+  </Issue>
+  <Issue xsi:type="Mini_Issue">
+    <Category>
+      <NatureOfInfo>jhgtf</NatureOfInfo>
+      <TargetAudience>nbvc</TargetAudience>
+      <Originality>false</Originality>
+    </Category>
+    <Name>qw</Name>
+    <Edition>54</Edition>
+    <Periodicity>false</Periodicity>
+    <Kind>ujyhgtrf</Kind>
+  </Issue>
+</ArrayOfIssue>

@@ -1,0 +1,4 @@
+'Книга'|'dfvgb'|'True'|'fgh'|'sdfg'|'345'|'False'|'kjnb'|'sdf'|'True'
+'Мини-издание'|'/.,'|'False'|'lkjh'|'kjh'|'87'|'False'|'qwer'
+'Книга'|'mnbvcxz'|'True'|'lkjh'|'iuytrew'|'87'|'False'|'qwer'|'mnbvc'|'True'
+'Книга'|'sdf'|'True'|'zzxcv'|'qwq'|'23456'|'False'|'bv'|'ytr'|'True'
