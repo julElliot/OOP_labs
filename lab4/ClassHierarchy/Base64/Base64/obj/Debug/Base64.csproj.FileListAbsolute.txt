@@ -1,0 +1,6 @@
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base64\Base64\bin\Debug\Base64.dll
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base64\Base64\bin\Debug\Base64.pdb
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base64\Base64\obj\Debug\Base64.csprojAssemblyReference.cache
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base64\Base64\obj\Debug\Base64.csproj.CoreCompileInputs.cache
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base64\Base64\obj\Debug\Base64.dll
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base64\Base64\obj\Debug\Base64.pdb

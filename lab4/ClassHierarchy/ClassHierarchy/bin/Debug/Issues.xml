@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ArrayOfIssue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Issue>
+    <Category>
+      <NatureOfInfo>dfsdf</NatureOfInfo>
+      <TargetAudience>gfhf</TargetAudience>
+      <Originality>true</Originality>
+    </Category>
+    <Name>xcvdv</Name>
+    <Edition>34</Edition>
+    <Periodicity>false</Periodicity>
+  </Issue>
+</ArrayOfIssue>

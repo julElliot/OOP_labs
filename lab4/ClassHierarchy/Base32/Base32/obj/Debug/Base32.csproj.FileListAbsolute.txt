@@ -1,0 +1,6 @@
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base32\Base32\bin\Debug\Base32.dll
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base32\Base32\bin\Debug\Base32.pdb
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base32\Base32\obj\Debug\Base32.csprojAssemblyReference.cache
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base32\Base32\obj\Debug\Base32.csproj.CoreCompileInputs.cache
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base32\Base32\obj\Debug\Base32.dll
+D:\Универ\4 семестр\ООП\Labs\4 lab\ClassHierarchy\Base32\Base32\obj\Debug\Base32.pdb
